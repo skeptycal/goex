@@ -4,12 +4,19 @@ goex
 [![Build Status](https://travis-ci.org/skeptycal/goex.svg?branch=master)](https://travis-ci.org/skeptycal/goex) [![GoDoc](https://godoc.org/github.com/skeptycal/goex?status.svg)](https://godoc.org/github.com/skeptycal/goex)
 
 goex is a command line tool to execute Go code. Output is printed as goons to stdout.
+It is heavily modeled after [goexec](https://github.com/shurcooL/goexec) and is
+my interpretation of that project.
 
 Installation
 ------------
 
-```bash
+```sh
+
+# download and install a local copy to the go src directory
 go get -u github.com/skeptycal/goex
+
+# shell reload
+exec ${SHELL} -l
 ```
 
 Usage
@@ -30,7 +37,7 @@ Usage: goex [flags] [packages] [package.]function(parameters)
 Examples
 --------
 
-```bash
+```sh
 $ goex 'strings.Repeat("Go! ", 5)'
 (string)("Go! Go! Go! Go! Go! ")
 
@@ -70,6 +77,7 @@ $ echo '"fmt"' | goex -stdin 'gist4727543.GetForcedUse'
 Alternatives
 ------------
 
+-   [goexec](https://github.com/shurcooL/goexec) - the inspiration for this program
 -	[gommand](https://github.com/sno6/gommand) - Go one liner program, similar to python -c.
 -	[gorram](https://github.com/natefinch/gorram) - Like go run for any Go function.
 -	[goeval](https://github.com/dolmen-go/goeval) - Run Go snippets instantly from the command-line.
