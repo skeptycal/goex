@@ -1,0 +1,2 @@
+goex is a command line tool to execute Go code. Output is printed as goons
+to stdout.
